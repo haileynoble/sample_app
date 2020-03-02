@@ -6,6 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',                      '6.0.2.1'
 
+gem 'bootstrap-sass',             '3.4.1'
+
 gem 'image_processing',           '1.9.3'
 
 gem 'mini_magick',                '4.9.5'

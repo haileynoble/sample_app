@@ -1,0 +1,34 @@
+1. >> h = {"one" => "uno", "two" => "dos", "three" => "tres" }
+   => {"one" =>"uno", "two"=>"dos", "three"=>"tres"}
+   >> h.each do |key, value|
+   ?> puts "#{key} in spanish is #{value}"
+   >> end
+   
+   one in spanish is uno
+   two in spanish is dos
+   three in spanish is tres
+  =>{"one"=>"uno", "two"=>"dos", "three"=>"tres"}
+  
+
+2. >> person1 = {first: "Michael", last: "Noble"}
+   >> person2 = {first: "Beth", last: "Goodale"}
+   >> person3 = {first: "Hailey", last: "Hornbacher"}
+   >> params = {father: person1, mother: person2, child: person3}
+   >> params[:father][:first]
+   >> params[:father][:first]
+   => "Michael"
+   
+   
+3. >> person = {name: "Hailey", email: "hnnoble@csustudent.net", 
+      password_digest: (('a'..'z'.to_a.shuffle[0..15.join)}
+  => {:name=>"Hailey", :email=>"hnnoble@csustudent.net" , 
+      :password_digest=>"thibzxwdrpqosjy"}
+      
+      
+4. >> "b" => 200 }.merge({ "b" => 300})
+   => {"a"=>100, "b"=>300}
+   
+   
+   
+   
+   
