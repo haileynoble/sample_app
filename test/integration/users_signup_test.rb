@@ -4,14 +4,32 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   
 	test "invalid signup information" do
 		get signup_path
-		assert_no_difference 'User.count'  do
-			post users_path, params: { user: {name: "Example User",
+		assert_no_difference 'User.count' do
+			post users_path, params: { user: {name: "",
 				     email: "user@example.com",
-				     password: "password",
-				     password_confirmation: "password"}}
+				     password: 			"foo",
+				     password_confirmation: "bar" } }
+		end
+		assert template 'users/new'
+		assert_select 'div#error_explanation'
+		assert_select 'div.field_with_errors'
+	end
+
+		follow_redirect!
+		assert_template 'users/show'
+		assert_not flash.FILL_IN
+		
+	end
+
+	test "valid signup information" do
+		get signup_path
+		assert_difference 'User.count', 1 do
+		    post users_path, params: {user: { name: "Example User",
+						      email: "user@example.com",
+						      password: "password",
+						      password_confirmation: "password" } }
 		end
 		follow_redirect!
 		assert_template 'users/show'
-		
-	end
+		assert is_logged_in?
 end
