@@ -26,7 +26,7 @@ gem 'bootstrap-will_paginate',    '1.0.0'
 
 gem 'bootstrap-sass',             '3.4.1'
 
-gem 'puma',                       '3.12.2'
+gem 'puma',                       '3.12.4'
 
 gem 'sass-rails',                 '5.1.0'
 
